@@ -1,0 +1,371 @@
+*{
+    /*Properties to set all elements*/
+    border: 2px solid orange;
+    border-radius: 2px;
+}
+header{
+    border: 2px solid blue;
+    height: auto;
+}
+body{
+    border: 3px solid black;
+    /*display: flow-root;*/
+    height: 5200px;
+    background-image: url(../Screen.jpg);    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; /*You will always see the image in the center, even if you scroll
+    When this is scroll, you have to scroll to the center to see the image,(not gonna work with size:cover)*/
+    background-size: cover; /*No whitespaces, always see the image everywhere*/
+
+}
+.test1{
+    border: 2px solid lightcoral;
+    width: 50%; /*fifty percent of the possible max width*/
+    max-height: 200px;
+    padding: 10px;
+    box-sizing: border-box; /*considers borders and scroll bars while setting size*/
+    overflow: visible; /*default*/
+    overflow: hidden;
+    overflow: clip;
+    overflow-clip-margin: 50px;
+    /*Displays the margin additionally*/
+    overflow: scroll ; 
+    /*Even if there is not enough text to scroll, bars will be displayed as disabled*/
+    overflow: auto;
+    /*Scroll bars is displayed if needed and vice versa*/
+    
+    display: none; /*completely destroys element*/
+    /*visibility: hidden;/*makes it invisible*/
+    display:inline-block; /*This block is in one single line
+    */
+    text-align: center;
+    background-color: slategray;
+
+}
+span{
+    display: inline; /*span is inline by default.Height and width is not activated with inline (inline-block activates it)*/
+    background-color: black;
+    color: aqua;
+}
+.videos{
+    background-color: blue;
+    /*float: left;*/
+}
+#smallVideo{
+    position: relative;
+    bottom: 50px; /*Pushes from the bottom*/
+    opacity: 0.5;
+}
+#box1{
+    position: fixed;
+    right: 50%; /*Always will remain in the top right corner of the viewport*/
+    top: 0;
+    height: 50px;
+    width: 50px;
+
+    background-color: brown;
+}
+#box2{
+    height: 100px;
+    width: 100px;
+    position: sticky;
+    left: 270px;
+    top: 50px;/*This component will always remain in the viewport 
+    and always AT LEAST 50px margin from the top will exist when you scroll
+    if its initial place has 50px margin it will remain there
+    until you scroll unlike fixed position.
+    Unless at least one direction is set, stickiness is not recognizable
+    Always remains in its parent (header, in this case) unlike fixed*/
+    display: block;
+    background-color: blue;
+}
+#box3{
+    display: block;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    /*Locates the left corner of the child object to the x,y (50%(of parent x),0)*/
+    /*To make this work, set parent's position (relative maybe)*/
+    top: 35px;
+    right: 35px;
+    background-color: aquamarine;
+}
+.randomText{
+    background-color: black;
+    color: bisque;
+}
+#grandFather p{ /*This will be applied to the all descendant "p"s (Operator is space here)*/
+    text-align: center;
+}
+#grandFather > p{ /*Only direct childs will be affected*/
+    color: blue;
+}
+#grandFather ~ p{ /*All the siblings will be affected(Alt+NumPad(0126) will print the operator)*/
+    text-align: end;
+}
+#grandFather + p{ /*Only adjacent siblings will be affected*/
+    color: chartreuse;
+}
+/*As you can see, siblings before the element are not affected from sibling operators*/
+/*PSEUDO CLASSES:*/
+#myLink:link{
+    color:dodgerblue;
+    background-color: aqua;
+    font-weight: bolder;
+    font-size: 50px;
+}
+#myLink:hover{
+    color:blue;
+    font-size: 55px;
+}
+#myLink:active{
+    color:black;
+    font-size: 60px;
+}
+#myLink:visited{
+    color: gray;
+}
+#myList{
+    background-color: white;
+}
+#myList > li{
+    color: black;
+    font-weight: 900;
+}
+#myList > li:not(:hover){
+    background-color:blueviolet;
+}
+#myList > li:nth-child(odd){ /*This can be 3n, 2n+2 etc*/
+    background-color: lightslategray;
+}
+#myList > li:hover{
+    background-color: lightskyblue;
+}
+#interactiveText{
+    background-color: lightskyblue;
+}
+#value{
+    display: none;   
+}
+#key:hover + p{
+    display: block;
+}
+/*h1,p,div etc are selectors*/
+/*Pseudos do some task under certain conditions*/
+/*Pseudo classes target state, pseudo elements target specific parts
+Thanks to pseudo elements, we can add more content without changing html*/
+/*PSEUDO ELEMENTS::*/
+#pseudoTest::first-letter{
+    font-style: italic;
+    font-size: 2em;
+}
+#pseudoTest::first-line{
+    color: blueviolet;
+}
+#pseudoTest::selection{
+    background-color: rgb(196, 188, 188);
+    color: rgb(42, 10, 71);
+}
+#myOrder{
+    background-color: black;
+    color: aliceblue;
+}
+#myOrder li::before{
+    content: "# ";
+}
+#myOrder li::after{
+    content: " -";
+}
+#myOrder li::marker{
+    content: "!    ";
+    color: chartreuse;
+}
+/*PAGINATION:*/
+#pagesMenu{
+    background-color: black;
+    text-align: center;
+}
+#pagesMenu a{
+    color: aqua;
+    padding: 8px 15px;
+    display: inline-block;
+}
+#pagesMenu a.active{
+    background-color:navy;
+}
+#pagesMenu a:hover:not(.active){
+    background-color: grey;
+}
+#dropDown{
+    text-align: center;
+    cursor: pointer;
+    border-color: black;
+    max-width: fit-content;
+    transform: translate(200%, -2px); /*Translates by width of this element*/
+}
+#dropDown a{
+    padding: 5px;
+    display: block;
+    background-color: grey;
+    color: black;
+    font-weight: 800;
+}
+#openMenu{
+    padding: 5px;
+    max-width: fit-content;
+    border-color: black;
+    border-radius: 10px;
+}
+#Options{
+    box-shadow: 5px 5px 2px black;
+    visibility: hidden;
+}
+#dropDown:hover div{ /*This is not button, but complete div, so when the cursor moved on options, menu doesn't close.*/
+    visibility: visible;
+}
+#boxes{
+    height: 700px;
+    display: flex;
+    flex-direction: row;/*This is row by default*/
+    justify-content:space-evenly; /*default: flex start*/
+    align-items: center;/*aligns the boxes vertically, default:flex*/
+    flex-wrap: wrap; /*wraps the line when needed*/
+    align-content: normal;/*Aligns the lines vertically*/
+    /*changes spaces between the lines unlike align-items
+    For example,flex-end will make lines aligned from the end
+    without spaces*/
+    column-gap: 20px; /*Enabled with wrapping like align-content */
+    row-gap: 170px;
+}
+#boxes div{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    color: yellow;
+    border-radius: 15px;
+    font-size: 90px;
+}
+/*All the transformations provided by transform method are 
+linear, so the center of the component remain the same*/
+#boxes1{
+    background-color: white;
+    align-self: flex-start;
+    order: 5;
+    transform: rotate(15deg);/*Same with rotateZ in this case*/
+}
+#boxes2{
+    background-color: red;
+    align-self: flex-end;
+    order: 4;
+    transform: rotateZ(45deg);
+}
+#boxes3{
+    background-color: green;
+    align-self: flex-start; /*Just affects this item*/
+    /*Normally aligns in the box, but here aligns in its line*/
+    order: 3; /*This changes the order RELATIVE to other 
+    flexible items. Normally setting a negative number for one 
+    specific item locates it to the beginning and vice versa 
+    (because the others have default order values(0))*/
+    transform: scaleX(1.3);/*this means multiplying by 130% ont the X axis*/
+    transform: scale(1.1,2);
+}
+#boxes4{
+    background-color: blue;
+    align-self: flex-end;
+    order: 2;
+    transform: rotateY(-80deg); /*Squishes element by turning around vertical axis*/
+}
+#boxes5{
+    background-color: black;
+    order: 1;
+    align-self: flex-start;
+    transform: rotateX(180deg);
+}
+#testbox1{
+    background-color: slategray;
+    width: 20%;
+    height: 100px;
+    align-self: flex-end;
+    transform: skewX(30deg);
+}
+#testbox2{
+    background-color: forestgreen;
+    width: 20%;
+    height: 100px;
+    transform: skew(30deg,30deg);
+}
+#testbox3{
+    background-color: steelblue;
+    width: 20%;
+    height: 100px;align-self: flex-start;
+    transform: skewY(30deg);
+}
+#container1{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 600px;
+    margin: 50px;
+    padding: 50px;
+}
+#container1 div{
+    display: flex;
+    justify-content: center;
+}
+#container1 p{
+    border: 0;
+    font-size: 40px;
+    position: absolute;
+    transform: translateY(-25%);
+}
+#bigBox{
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#smallBox{
+    background-color: slateblue;
+    height: 200px;
+    width: 200px;
+    transform: rotate(42deg) skew(20deg,20deg) translateY(5px) scale(.8);
+}
+@keyframes myAnimation {
+    from{transform: translateY(500px);} /*this means 0%*/
+    to{transform: rotateZ(180deg);} /*this means 100%*/
+    50%{transform: scale(2, 2);}
+    25%{opacity: .5;}
+    20%{background-color: white;}
+    40%{background-color: rgb(120, 50, 50);}
+    60%{background-color: rgb(50, 120, 50);}
+    80%{background-color: rgb(50, 50, 120);}
+    100%{background-color: black;}
+    100%{box-shadow: 0px 0px 50px white;} /*This is for glow effect*/
+    /*the box will came from 500px Y and the text will begin normal*/
+    /*If translation were "to", the box would go 500px Y*/
+    /*If rotation were "from", the text would start reversed*/
+    /*when the animation is finished, properties ALWAYS will 
+    be set to those which implemented before the animation
+    50% animations will be done and then undone, if it's 75%
+    , 3 quarter of the duration will be pass with doing and
+    1 quarter of it will be spend for undoing*/
+}
+#box1{
+    animation-name: myAnimation;
+    animation-duration: 5s;
+    animation-direction: alternate; /*does and undoes the 
+    whole animation, reverse option will do it reversed and
+    alternate-reversed is also an option (default:normal)*/
+    animation-iteration-count: infinite;
+    /*If these are put in a pseudo class like hover,then
+    animation can be started dynamically*/
+    animation-play-state: running;
+    animation-play-state: paused;
+    animation-timing-function: linear(0 0%,-0.38 43.42%, 1 100%); 
+    /*default:ease-in-out(This makes the animation start 
+    slowly, accelerate, stop slowly), if this set to steps(n),
+    animation will be played in just n steps, custom 
+    cubic-bezier can be got from chrome styles*/
+}

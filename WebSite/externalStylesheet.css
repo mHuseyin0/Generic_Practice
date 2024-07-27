@@ -1,0 +1,82 @@
+/*External stylesheets are mostly preferred because they are 
+reusable in both an html file and different html files*/
+
+/*Change all*/
+h2{
+    color:olive;
+}
+/*Change id*/
+#p1{
+    color: gold;
+}
+#p2{
+    color: black;
+}
+#p3{
+    color:darkorange;
+}
+/*Change class*/
+.myPar{
+    color: darkviolet;
+}
+body{
+    background-color: slategrey;
+    margin: 20px;
+    border: 3px solid;
+    display: flow-root;/*Anything floating will remain in the body*/
+}
+h3{
+    font-family: forte,MV Boli; 
+} /*If the first font cannot be displayed by a browser, or
+there is a spelling mistake, then second one will be displayed*/
+p{
+    font-size: 10px;
+    font-size: 1.5em; /*This multiplies the font size BY NORMAL SIZE*/
+}/*Normally it's 16px*/
+ul{
+    font-weight: bolder;
+    font-style: italic;
+}
+@font-face {
+    src: url(Prompt-BlackItalic.ttf);
+    font-family: myCustomFont1;
+}
+dt{
+    font-family: myCustomFont1;
+}
+dd{
+    border-style:dashed;
+    border-width: 3px;
+    border-color: rgb(145, 23, 49);
+}
+#username{
+    border-style: intset;
+    border-radius: 10px;
+}
+#usernamel{
+    border-top: 2px solid rgb(255, 255, 255); /*width-style-color*/
+    margin-right: 20px;
+}
+#password{
+    border-radius: 10px;
+    margin-left: 23px;
+}
+#checkedl{
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+h4{
+    text-shadow: 2px 2px 2px rgb(14, 0, 216),2px -2px 2px rgb(115, 216, 0); /*Horizontal-vertical-blur-color. seperate shadows can be set with a comma*/
+}
+#comment{
+    box-shadow: 3px 3px 3px white;
+}
+#table{
+    margin: auto;
+}
+#img1{
+    float: left;
+    margin-right: 10px;
+}
+#commentl{
+
+}

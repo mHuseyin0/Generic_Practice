@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h4>HTML TEMPLATE- FLASK</h4>
+    </head>
+    <body>
+        <div>
+            <p>{{content}}</p>
+        </div>
+        <div>
+            {% for x in range(10) %}
+                {% if x%2 == 0 %}
+                    <p>{{x}}</p>
+                {% else %}
+                    <p>1 second delay</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </body>
+</html>

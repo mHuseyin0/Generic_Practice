@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+        <div style="background-color: dodgerblue;">
+            This is head of base.
+        </div> <!-- All the text will be inherited irrespective of their location.-->
+        {% endblock %}
+        {% if username != None %}
+            <div>
+                You are logged in as {{username}}.
+            </div>
+        {% endif %}
+    </head>
+    <br>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endwith %}
+        {% block content %}
+        <div id="body" style="background-color: chartreuse;">
+            This is body of base.
+            <form action="#" method="post">
+                <p>Name <input type="text" name="nm"></p>
+                <br>
+                <p>Password <input type="text" name="pw"></p>
+                <br>
+                <p>Submit <input type="submit" name="submit"></p> 
+            </form>
+        </div>
+        {% endblock %}
+        <div>
+            {% for user in registeredUsers %}
+                <p>{{user.name}}</p>
+            {% endfor %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <div>
+            {% with messages = get_flashed_messages() %}
+                {% for msg in messages %}
+                    <p>{{msg}}</p>
+                {% endfor %}
+            {% endwith %}
+        </div>
+    </head>
+    <body>
+        {% if "user" in session %}
+            <p>Your name: {{session["user"]}}</p>
+            <br>
+            <p>Your Password: {{session["password"]}}</p>
+        {% endif %}
+    </body>
+</html>
